@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function()
+            {
+            var buttons = document.querySelectorAll(".button");
+            function wrongAns()
+            {
+                this.style.backgroundColor = "red";
+            }
+            buttons.forEach(
+                function(button)
+                {
+                    button.addEventListener("click", wrongAns);
+                });
+
+            var rightbutton = document.getElementById("right");
+            function rightAns()
+            {
+                this.style.backgroundColor = "green";
+            }
+            rightbutton.addEventListener("click", rightAns)
+
+            var rightText = document.getElementById('rightanswer');
+            function displayRight()
+            {
+                rightText.style.display = 'block';
+            }
+            rightbutton.addEventListener("click", displayRight);
+
+            var wrongText = document.getElementById('wronganswer');
+            function displayWrong()
+            {
+                wrongText.style.display = 'block';
+            }
+            buttons.forEach(
+                function(button)
+                {
+                    button.addEventListener("click", displayWrong);
+                });
+
+            var inputField = document.getElementById('ip');
+            var submitButton = document.getElementById('submit');
+            var display1 = document.getElementById('rightplanet');
+            var display2 = document.getElementById('wrongplanet');
+            submitButton.addEventListener('click', function() {
+                var ans = inputField.value.trim();
+
+                if (ans === 'Mars')
+                {
+                    inputField.style.backgroundColor = 'green';
+                    display1.style.display = 'block';
+                }
+                else
+                {
+                    inputField.style.backgroundColor = 'red';
+                    display2.style.display = 'block';
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <h3><B>Who is the current world chess champion?</B></h3>
+                <!--Ding Liren-->
+                <p id="rightanswer" style="display: none;">Correct!</p>
+                <p id="wronganswer" style="display: none;">Incorrect</p>
+                    <button class="button">Viswanathan Anand</button>
+                    <button id="right">Ding Liren</button>
+                    <button class="button">Magnus Carlsen</button>
+                    <button class="button">Vladimir Kramnik</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which planet in our solar system is known as the "Red Planet"?</h3>
+                <!--Mars-->
+                <p id="rightplanet" style="display: none;">Correct!</p>
+                <p id="wrongplanet" style="display: none;">Incorrect</p>
+                    <input id="ip" type="text" placeholder="Enter the answer">
+                    <button id="submit" type="submit">Check Answer</button>
+            </div>
+        </div>
+    </body>
+</html>

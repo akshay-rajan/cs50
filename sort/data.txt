@@ -1,0 +1,41 @@
+----------------------------------------Algorithms and time------------------------------------------------
+>user: time spend by cpus during execution
+>sys: time spend by cpus during tasks such as malloc
+___________________________________________________________________________________________________________
+--------------------------------------------user + sys-----------------------------------------------------
+sort1
+sor50k      0.198s-------much less time
+ran50k      7s
+rev50k      5.1s
+
+sort2
+sor50k      0.193s
+ran50k      0.194s
+rev50k      0.192s
+
+sort3
+sor50k      2.7s
+ran50k      2.7s
+rev50k      2.8s
+
+
+-----------------------------------------------------------------------------------------------------------
+>Selection sort--------O(n^2)   Ω(n^2)
+for numbers from i to n-1
+    find smallest no from number[i] to number[n-1]
+    swap it with number[i]
+
+>Bubble sort-----------O(n^2)   Ω(n)
+repeat n-1 times
+    for i from 0 to n-2
+        if number[i] and number[i+1] out of order
+            Swap
+
+>Merge sort------------O(nlogn) Ω(nlogn)
+If only one number
+    Quit
+Else
+    Sort left half
+    Sort right half
+    Merge
+-----------------------------------------------------------------------------------------------------------

@@ -1,0 +1,21 @@
+The audio aura can be calculated using their average energy, valence and danceability.
++-------------+
+| AVG(energy) |
++-------------+
+| 0.65906     |
++-------------+
++--------------+
+| AVG(valence) |
++--------------+
+| 0.484443     |
++--------------+
++-------------------+
+| AVG(danceability) |
++-------------------+
+| 0.71646           |
++-------------------+
+The listener is characterized by high energy, high danceability but average valence.
+
+The calculation is not optimal, since the frequency that the listener plays each song is not considered.
+If the listener listens to a particular type of songs more frequently, that effects may not be seen simply by taking average.
+
