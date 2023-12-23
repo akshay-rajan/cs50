@@ -1,0 +1,93 @@
+.move-right {
+    margin-left: 850px;
+}
+
+body {
+    color: white;
+}
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: "Helvetica", sans-serif;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.nav-background {
+    background-image: url("bgunblur.jpg");
+    background-size: cover;
+    min-height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+.text {
+    flex: 1;
+    padding: 20px;
+}
+.photo {
+    max-width: 50%;
+}
+
+.quote {
+    margin: auto;
+    width: 50%;
+    border: 3px solid white;
+    padding: 10px;
+    font-family: "Lucida Handwriting","Courier New", cursive;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+p {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.box {
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #4ED9FE;
+    font-size: 20px;
+    color: #333;
+}
+
+.trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.falling-text {
+    position: absolute;
+    color: green;
+    font-size: 20px;
+    white-space: nowrap;
+}
+@keyframes fall {
+    0% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+}
+
+img {
+    opacity: 0;
+    transition: opacity 2s ease;
+}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Stocks</th>
+                    <th>Shares</th>
+                    <th>Price Per Share</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["pricePerShare"] | usd }}</td>
+                    <td>{{ stock["totalValue"] | usd }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ grandTotal | usd }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="mb-3">
+        <table class="table table-dark">
+            <tbody>
+                <tr >
+                    <th scope="row">Balance</th>
+                    <td>{{ balance | usd }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mb-3">
+        <a href="/newpassword">Change Password</a>
+    </div>
+{% endblock %}
